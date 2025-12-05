@@ -65,7 +65,7 @@ server <- function(input, output) {
   output$timer <- renderText({
     if (is.null(v$done_time)) return("")
     invalidateLater(100)
-    paste("Resetting in...", round(difftime(Sys.time(), v$done_time, units = "secs"), 1))
+    paste("Resetting...", round(difftime(Sys.time(), v$done_time, units = "secs"), 1))
   })
   
   output$plot <- renderPlot({
